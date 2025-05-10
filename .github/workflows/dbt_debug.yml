@@ -1,0 +1,36 @@
+name: DBT Debug on Push
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  dbt-debug:
+    runs-on: ubuntu-latest
+
+    env:
+      DBT_USER: ${{ secrets.DBT_USER }}
+      DBT_PASSWORD: ${{ secrets.DBT_PASSWORD }}
+      DBT_HOST: ${{ secrets.DBT_HOST }}
+      DBT_DATABASE: ${{ secrets.DBT_DATABASE }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dbt
+        run: pip install dbt-sqlserver
+
+      - name: Set up DBT profile
+        run: |
+          mkdir ~/.dbt
+          cp .github/profiles.yml ~/.dbt/profiles.yml
+
+      - name: Run dbt debug
+        run: dbt debug

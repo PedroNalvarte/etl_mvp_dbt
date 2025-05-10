@@ -1,0 +1,15 @@
+etl_mvp_project:
+  outputs:
+    target: dev
+    dev:
+      database: "{{ env_var('DBT_DATABASE') }}"
+      driver: ODBC Driver 17 for SQL Server
+      encrypt: false
+      host: "{{ env_var('DBT_HOST') }}"
+      password: "{{ env_var('DBT_PASSWORD') }}"
+      port: 1433
+      schema: raw    
+      threads: 1
+      trust_cert: true
+      type: sqlserver
+      user: "{{ env_var('DBT_USER') }}"
