@@ -1,15 +1,13 @@
 etl_mvp_project:
+  target: prod
   outputs:
-    target: dev
-    dev:
-      database: "{{ env_var('DBT_DATABASE') }}"
-      driver: ODBC Driver 17 for SQL Server
-      encrypt: false
-      host: "{{ env_var('DBT_HOST') }}"
-      password: "{{ env_var('DBT_PASSWORD') }}"
-      port: 1433
-      schema: raw    
-      threads: 1
-      trust_cert: true
+    prod:
       type: sqlserver
+      driver: ODBC Driver 18 for SQL Server
+      server: "{{ env_var('DBT_HOST') }}"
+      port: 1433
+      database: "{{ env_var('DBT_DATABASE') }}"
+      schema: raw
       user: "{{ env_var('DBT_USER') }}"
+      password: "{{ env_var('DBT_PASSWORD') }}"
+      trust_cert: true
