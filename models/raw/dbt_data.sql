@@ -1,6 +1,3 @@
-{{ config(
-    schema='raw',
-    alias='dbt_data'
-) }}
+{{ config(schema='raw', alias='dbt_data', materialized='table') }}
 
-select * from raw.data;2
+select * from raw.data
