@@ -1,9 +1,7 @@
 name: DBT Debug on Push
 
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
 
 jobs:
   dbt-debug:
