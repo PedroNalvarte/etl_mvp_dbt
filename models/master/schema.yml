@@ -1,0 +1,80 @@
+version: 2
+
+models:
+  - name: dim_product
+    description: "Catálogo de productos únicos con sus precios y costos unitarios"
+    columns:
+      - name: product_id
+        description: "Clave técnica del producto"
+      - name: product
+        description: "Nombre del producto o tipo"
+      - name: precio_unitario
+        description: "Precio de venta por unidad"
+      - name: costo_unitario
+        description: "Costo de producción por unidad"
+
+  - name: dim_region
+    description: "Dimensión que combina país y región geográfica"
+    columns:
+      - name: region_id
+        description: "Clave técnica de la región"
+      - name: region
+        description: "Nombre de la región"
+      - name: country
+        description: "Nombre del país asociado a la región"
+
+  - name: dim_ship_method
+    description: "Métodos de envío disponibles"
+    columns:
+      - name: ship_method_id
+        description: "Clave técnica del método de envío"
+      - name: ship_method
+        description: "Descripción del método de envío"
+
+  - name: dim_date
+    description: "Tabla de fechas generadas desde los pedidos"
+    columns:
+      - name: date_key
+        description: "Clave única de la fecha (formato YYYYMMDD)"
+      - name: full_date
+        description: "Fecha completa"
+      - name: year
+        description: "Año de la fecha"
+      - name: month
+        description: "Mes (numérico)"
+      - name: quarter
+        description: "Trimestre del año (1 a 4)"
+
+  - name: fact_sales
+    description: "Tabla de hechos con métricas financieras y claves a las dimensiones"
+    columns:
+      - name: date_key
+        description: "Fecha del pedido (formato YYYYMMDD)"
+      - name: product_id
+        description: "Producto vendido"
+      - name: id_pais
+        description: "País al que se realizó el pedido"
+      - name: ship_method_id
+        description: "Método de envío utilizado"
+      - name: prioridad
+        description: "Prioridad del pedido (1 = baja, 4 = crítica)"
+      - name: units_sold
+        description: "Unidades vendidas"
+      - name: production_cost
+        description: "Costo de producción"
+      - name: shipping_cost
+        description: "Costo de envío"
+      - name: customs_cost
+        description: "Costo de aduanas"
+      - name: marketing_cost
+        description: "Costo en marketing"
+      - name: storage_cost
+        description: "Costo de almacenamiento"
+      - name: other_cost
+        description: "Otros costos asociados"
+      - name: total_cost
+        description: "Suma total de todos los costos"
+      - name: total_revenue
+        description: "Ingresos obtenidos"
+      - name: total_profit
+        description: "Utilidad neta (ingresos - costos)"

@@ -35,7 +35,11 @@ models:
     raw:
       +schema: raw
       +materialized: table
-      
+
     staging:
       +schema: staging
       +materialized: view
+
+    master:
+      +schema: master
+      +materialized: table
