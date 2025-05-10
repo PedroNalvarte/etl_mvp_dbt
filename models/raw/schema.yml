@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: dbt_data
+    description: "Modelo reflejo de la tabla raw.data cargada por ADF con datos de ventas"
+    columns:
+      - name: region
+        description: "Región geográfica"
+      - name: country
+        description: "País"
+      - name: item_type
+        description: "Tipo de producto vendido"
+      - name: order_priority
+        description: "Prioridad de la orden"
+      - name: shipping_method
+        description: "Método de envío"
+      - name: order_date
+        description: "Fecha del pedido"
+      - name: order_id
+        description: "ID de la orden"
+      - name: ship_date
+        description: "Fecha de envío"
+      - name: units_sold
+        description: "Unidades vendidas"
+      - name: unit_price
+        description: "Precio unitario"
+      - name: unit_cost
+        description: "Costo unitario"
+      - name: production_cost
+        description: "Costo de producción total"
+      - name: shipping_cost
+        description: "Costo de envío"
+      - name: customs_cost
+        description: "Costo de aduanas"
+      - name: marketing_cost
+        description: "Costo de marketing"
+      - name: storage_cost
+        description: "Costo de almacenamiento"
+      - name: other_cost
+        description: "Otros costos"
+      - name: total_cost
+        description: "Costo total"
+      - name: total_revenue
+        description: "Ingresos totales"
+      - name: total_profit
+        description: "Ganancia total"

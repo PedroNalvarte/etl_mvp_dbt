@@ -41,3 +41,9 @@ jobs:
 
       - name: Run dbt debug
         run: dbt debug
+
+      - name: Run DBT
+        run: |
+          dbt run --select dbt_data
+#          dbt test --select dbt_data
+#          dbt docs generate
