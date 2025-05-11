@@ -51,7 +51,7 @@ jobs:
 
       - name: Run Tests
         run: |
-          dbt testn
+          dbt test
 
       - name: Deploy to netlify-build branch
         run: |
