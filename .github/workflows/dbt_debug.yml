@@ -44,5 +44,12 @@ jobs:
         run: |
           dbt deps
           dbt run
-#          dbt test --select dbt_data
-#          dbt docs generate
+
+      - name: Generate Docs
+        run: |
+          dbt docs generate
+
+      - name: Run Tests
+        run: |
+          dbt test --output json
+#        

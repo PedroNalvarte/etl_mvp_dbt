@@ -6,34 +6,56 @@ models:
     columns:
       - name: id_region
         description: "Clave técnica generada para la región"
+        tests:
+          - unique
+          - not_null
       - name: nombre_region
         description: "Nombre de la región geográfica"
+        tests:
+          - not_null
 
   - name: stg_pais
     description: "Tabla de staging para países únicos, relacionados con su región"
     columns:
       - name: id_pais
         description: "Clave técnica del país"
+        tests:
+          - unique
+          - not_null
       - name: nombre_pais
         description: "Nombre del país"
+        tests:
+          - not_null
       - name: id_region
         description: "Clave técnica de la región a la que pertenece el país"
+        tests:
+          - not_null
 
   - name: stg_metodo_envio
     description: "Tabla de staging para métodos de envío únicos"
     columns:
       - name: id_metodo
         description: "Clave técnica del método de envío"
+        tests:
+          - unique
+          - not_null
       - name: nombre_metodo
         description: "Descripción del método de envío (por ejemplo: 'SHIP')"
+        tests:
+          - not_null
 
   - name: stg_producto
     description: "Tabla de staging para tipos de producto y sus precios/costos unitarios"
     columns:
       - name: id_producto
         description: "Clave técnica del producto"
+        tests:
+          - unique
+          - not_null
       - name: tipo_producto
         description: "Tipo de producto (fruta, bebida, etc.)"
+        tests:
+          - not_null
       - name: precio_unitario
         description: "Precio unitario de venta del producto"
       - name: costo_unitario
@@ -44,26 +66,45 @@ models:
     columns:
       - name: id_pedido
         description: "Identificador de la orden"
+        tests:
+          - unique
+          - not_null
       - name: id_pais
         description: "Clave técnica del país asociado al pedido"
+        tests:
+          - not_null
       - name: prioridad_pedido
         description: "Prioridad asignada a la orden (por ejemplo: M, H, L)"
+        tests:
+          - not_null
       - name: fecha_pedido
         description: "Fecha de creación de la orden"
+        tests:
+          - not_null
       - name: fecha_envio
         description: "Fecha estimada o real de envío"
+        tests:
+          - not_null
       - name: id_metodo
         description: "Clave técnica del método de envío utilizado"
+        tests:
+          - not_null
 
   - name: stg_detalle_pedido
     description: "Tabla de staging a nivel de línea de detalle de cada pedido"
     columns:
       - name: id_detalle
         description: "Clave técnica del detalle del pedido (order_id + item_type)"
+        tests:
+          - not_null
       - name: id_pedido
         description: "Clave del pedido relacionado"
+        tests:
+          - not_null
       - name: id_producto
         description: "Clave del producto vendido"
+        tests:
+          - not_null
       - name: unidades_vendidas
         description: "Cantidad de unidades vendidas"
       - name: costo_produccion
@@ -82,5 +123,7 @@ models:
         description: "Suma total de todos los costos"
       - name: ingreso_total
         description: "Ingresos totales obtenidos por este detalle"
+        tests:
+          - not_null
       - name: ganancia_total
         description: "Ganancia neta: ingresos menos costos"

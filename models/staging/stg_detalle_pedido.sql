@@ -5,7 +5,17 @@ with source as (
 )
 
 select
-  {{ dbt_utils.generate_surrogate_key(['order_id', 'item_type']) }} as id_detalle,
+  {{ dbt_utils.generate_surrogate_key(['order_id',
+  'item_type',
+  'units_sold',
+  'unit_price',
+  'ship_date',
+  'production_cost',
+  'shipping_cost',
+  'customs_cost',
+  'marketing_cost',
+  'storage_cost',
+  'other_cost']) }} as id_detalle,
   cast(order_id as bigint) as id_pedido,
   {{ dbt_utils.generate_surrogate_key(['item_type']) }} as id_producto,
   cast(units_sold as int) as unidades_vendidas,

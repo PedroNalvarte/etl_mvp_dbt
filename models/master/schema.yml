@@ -6,8 +6,10 @@ models:
     columns:
       - name: product_id
         description: "Clave técnica del producto"
+        tests: [unique, not_null]
       - name: product
         description: "Nombre del producto o tipo"
+        tests: [not_null]
       - name: precio_unitario
         description: "Precio de venta por unidad"
       - name: costo_unitario
@@ -18,26 +20,33 @@ models:
     columns:
       - name: region_id
         description: "Clave técnica de la región"
+        tests: [  not_null]
       - name: region
         description: "Nombre de la región"
+        tests: [not_null]
       - name: country
         description: "Nombre del país asociado a la región"
+        tests: [not_null]
 
   - name: dim_ship_method
     description: "Métodos de envío disponibles"
     columns:
       - name: ship_method_id
         description: "Clave técnica del método de envío"
+        tests: [unique, not_null]
       - name: ship_method
         description: "Descripción del método de envío"
+        tests: [not_null]
 
   - name: dim_date
     description: "Tabla de fechas generadas desde los pedidos"
     columns:
       - name: date_key
         description: "Clave única de la fecha (formato YYYYMMDD)"
+        tests: [unique, not_null]
       - name: full_date
         description: "Fecha completa"
+        tests: [not_null]
       - name: year
         description: "Año de la fecha"
       - name: month
@@ -50,16 +59,21 @@ models:
     columns:
       - name: date_key
         description: "Fecha del pedido (formato YYYYMMDD)"
+        tests: [not_null]
       - name: product_id
         description: "Producto vendido"
+        tests: [not_null]
       - name: id_pais
         description: "País al que se realizó el pedido"
+        tests: [not_null]
       - name: ship_method_id
         description: "Método de envío utilizado"
+        tests: [not_null]
       - name: prioridad
         description: "Prioridad del pedido (1 = baja, 4 = crítica)"
       - name: units_sold
         description: "Unidades vendidas"
+        tests: [not_null]
       - name: production_cost
         description: "Costo de producción"
       - name: shipping_cost
@@ -74,7 +88,10 @@ models:
         description: "Otros costos asociados"
       - name: total_cost
         description: "Suma total de todos los costos"
+        tests: [not_null]
       - name: total_revenue
         description: "Ingresos obtenidos"
+        tests: [not_null]
       - name: total_profit
         description: "Utilidad neta (ingresos - costos)"
+        tests: [not_null]
