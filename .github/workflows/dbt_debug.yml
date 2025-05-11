@@ -69,5 +69,4 @@ jobs:
 
           git add dbt-docs run_results.json
           git commit -m "Update dbt docs and test results [skip ci]" || echo "No changes"
-          git push https://x-access-token:${{ secrets.REPO_DBT_TOKEN }}@github.com/PedroNalvarte/etl_mvp_dbt.git netlify-build
-#        
+          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/PedroNalvarte/etl_mvp_dbt.git netlify-build
