@@ -60,10 +60,13 @@ jobs:
           git config --global user.name "Pedro Nalvarte"
           git config --global user.email "impedro2406@gmail.com"
 
-          # Clonar netlify-build con token
+          # Clona la rama netlify-build autenticada con el token
           git clone https://x-access-token:$GH_TOKEN@github.com/PedroNalvarte/etl_mvp_dbt.git --branch netlify-build netlify-build
 
-          # Copiar archivos generados
+          # Crear carpeta dbt-docs si no existe
+          mkdir -p ./netlify-build/dbt-docs
+
+          # Copiar archivos generados por dbt
           cp -r target/* ./netlify-build/dbt-docs/
           cp target/run_results.json ./netlify-build/run_results.json
 
