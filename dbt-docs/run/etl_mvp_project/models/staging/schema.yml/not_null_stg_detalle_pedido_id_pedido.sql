@@ -6,7 +6,7 @@
   USE [etl-server];
   EXEC('create view 
 
-    [dbt_test__audit.testview_05ff32893483bc22f88bf64c736ad5e3]
+    [dbt_test__audit.testview_3d474dcf826d310a9481d99da55cf920]
    as 
     
     
@@ -28,12 +28,12 @@ where id_pedido is null
   from (
     select  * from 
 
-    [dbt_test__audit.testview_05ff32893483bc22f88bf64c736ad5e3]
+    [dbt_test__audit.testview_3d474dcf826d310a9481d99da55cf920]
   
   ) dbt_internal_test;
 
   USE [etl-server];
   EXEC('drop view 
 
-    [dbt_test__audit.testview_05ff32893483bc22f88bf64c736ad5e3]
+    [dbt_test__audit.testview_3d474dcf826d310a9481d99da55cf920]
   ;')

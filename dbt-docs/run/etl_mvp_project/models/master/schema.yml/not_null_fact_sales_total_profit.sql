@@ -6,7 +6,7 @@
   USE [etl-server];
   EXEC('create view 
 
-    [dbt_test__audit.testview_e9ff50ca0e328eea79a884d09f7d86ec]
+    [dbt_test__audit.testview_618c9f16fadf51c80988382db804778f]
    as 
     
     
@@ -28,12 +28,12 @@ where total_profit is null
   from (
     select  * from 
 
-    [dbt_test__audit.testview_e9ff50ca0e328eea79a884d09f7d86ec]
+    [dbt_test__audit.testview_618c9f16fadf51c80988382db804778f]
   
   ) dbt_internal_test;
 
   USE [etl-server];
   EXEC('drop view 
 
-    [dbt_test__audit.testview_e9ff50ca0e328eea79a884d09f7d86ec]
+    [dbt_test__audit.testview_618c9f16fadf51c80988382db804778f]
   ;')

@@ -6,7 +6,7 @@
   USE [etl-server];
   EXEC('create view 
 
-    [dbt_test__audit.testview_9f3dcbccc3d78f46e358a879f4639606]
+    [dbt_test__audit.testview_60ebd9d81a698f2380377e6d17635c2b]
    as 
     
     
@@ -28,12 +28,12 @@ where date_key is null
   from (
     select  * from 
 
-    [dbt_test__audit.testview_9f3dcbccc3d78f46e358a879f4639606]
+    [dbt_test__audit.testview_60ebd9d81a698f2380377e6d17635c2b]
   
   ) dbt_internal_test;
 
   USE [etl-server];
   EXEC('drop view 
 
-    [dbt_test__audit.testview_9f3dcbccc3d78f46e358a879f4639606]
+    [dbt_test__audit.testview_60ebd9d81a698f2380377e6d17635c2b]
   ;')

@@ -6,7 +6,7 @@
   USE [etl-server];
   EXEC('create view 
 
-    [dbt_test__audit.testview_01e6dbb32288b27ebb6c2f2d1143f06b]
+    [dbt_test__audit.testview_07a61dd9333065f154a0e72e5345a578]
    as 
     
     
@@ -28,12 +28,12 @@ where prioridad_pedido is null
   from (
     select  * from 
 
-    [dbt_test__audit.testview_01e6dbb32288b27ebb6c2f2d1143f06b]
+    [dbt_test__audit.testview_07a61dd9333065f154a0e72e5345a578]
   
   ) dbt_internal_test;
 
   USE [etl-server];
   EXEC('drop view 
 
-    [dbt_test__audit.testview_01e6dbb32288b27ebb6c2f2d1143f06b]
+    [dbt_test__audit.testview_07a61dd9333065f154a0e72e5345a578]
   ;')
