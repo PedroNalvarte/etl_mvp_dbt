@@ -52,4 +52,22 @@ jobs:
       - name: Run Tests
         run: |
           dbt test --output json
+
+      - name: Deploy to netlify-build branch
+        run: |
+          git config --global user.name "Pedro Nalvarte"
+          git config --global user.email "impedro2406@gmail.com"
+          git fetch origin
+          git switch -c netlify-build origin/netlify-build
+
+          # Copiar archivos generados por dbt
+          mkdir -p dbt-docs
+          cp -r target/* ./dbt-docs/
+          cp target/run_results.json ./run_results.json
+
+          # No tocamos index.html ni test_status.html existentes
+
+          git add dbt-docs run_results.json
+          git commit -m "Update dbt docs and test results [skip ci]" || echo "No changes to commit"
+          git push origin netlify-build
 #        
