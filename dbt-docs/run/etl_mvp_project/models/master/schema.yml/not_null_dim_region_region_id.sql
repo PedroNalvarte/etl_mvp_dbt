@@ -6,7 +6,7 @@
   USE [etl-server];
   EXEC('create view 
 
-    [dbt_test__audit.testview_42dc040da7b9cf3e4bb492bbd4f65141]
+    [dbt_test__audit.testview_97ecaaabe7d29d5cc97d94ff9fda474e]
    as 
     
     
@@ -28,12 +28,12 @@ where region_id is null
   from (
     select  * from 
 
-    [dbt_test__audit.testview_42dc040da7b9cf3e4bb492bbd4f65141]
+    [dbt_test__audit.testview_97ecaaabe7d29d5cc97d94ff9fda474e]
   
   ) dbt_internal_test;
 
   USE [etl-server];
   EXEC('drop view 
 
-    [dbt_test__audit.testview_42dc040da7b9cf3e4bb492bbd4f65141]
+    [dbt_test__audit.testview_97ecaaabe7d29d5cc97d94ff9fda474e]
   ;')

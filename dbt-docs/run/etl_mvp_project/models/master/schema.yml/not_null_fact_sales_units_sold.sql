@@ -6,7 +6,7 @@
   USE [etl-server];
   EXEC('create view 
 
-    [dbt_test__audit.testview_bb298d7e123e91d3d88b2cf6023d63e3]
+    [dbt_test__audit.testview_3e26d13d66e43d029361f714d9731090]
    as 
     
     
@@ -28,12 +28,12 @@ where units_sold is null
   from (
     select  * from 
 
-    [dbt_test__audit.testview_bb298d7e123e91d3d88b2cf6023d63e3]
+    [dbt_test__audit.testview_3e26d13d66e43d029361f714d9731090]
   
   ) dbt_internal_test;
 
   USE [etl-server];
   EXEC('drop view 
 
-    [dbt_test__audit.testview_bb298d7e123e91d3d88b2cf6023d63e3]
+    [dbt_test__audit.testview_3e26d13d66e43d029361f714d9731090]
   ;')

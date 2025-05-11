@@ -6,7 +6,7 @@
   USE [etl-server];
   EXEC('create view 
 
-    [dbt_test__audit.testview_ca23851a08dd868de1681e0d8628e69c]
+    [dbt_test__audit.testview_fc75125313a34a5e4c1f0cae14e64bdc]
    as 
     
     
@@ -31,12 +31,12 @@ having count(*) > 1
   from (
     select  * from 
 
-    [dbt_test__audit.testview_ca23851a08dd868de1681e0d8628e69c]
+    [dbt_test__audit.testview_fc75125313a34a5e4c1f0cae14e64bdc]
   
   ) dbt_internal_test;
 
   USE [etl-server];
   EXEC('drop view 
 
-    [dbt_test__audit.testview_ca23851a08dd868de1681e0d8628e69c]
+    [dbt_test__audit.testview_fc75125313a34a5e4c1f0cae14e64bdc]
   ;')
