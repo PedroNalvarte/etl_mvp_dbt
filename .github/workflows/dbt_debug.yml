@@ -75,3 +75,7 @@ jobs:
           git add dbt-docs run_results.json
           git commit -m "Update dbt docs and test results [skip ci]" || echo "No changes"
           git push origin netlify-build
+
+      - name: Trigger Netlify Deploy Hook
+        run: |
+          curl -X POST https://api.netlify.com/build_hooks/682033c09490e14a01bf1a5a
