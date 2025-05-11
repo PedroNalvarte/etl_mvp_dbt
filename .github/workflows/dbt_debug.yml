@@ -68,6 +68,6 @@ jobs:
           # No tocamos index.html ni test_status.html existentes
 
           git add dbt-docs run_results.json
-          git commit -m "Update dbt docs and test results [skip ci]" || echo "No changes to commit"
-          git push origin netlify-build
+          git commit -m "Update dbt docs and test results [skip ci]" || echo "No changes"
+          git push https://x-access-token:${{ secrets.REPO_DBT_TOKEN }}@github.com/PedroNalvarte/etl_mvp_dbt.git netlify-build
 #        
