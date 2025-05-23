@@ -6,7 +6,7 @@
   USE [etl-server];
   EXEC('create view 
 
-    [dbt_test__audit.testview_585f8125b540e2e047790d71901d8ba3]
+    [dbt_test__audit.testview_0024b185266f28a7013651ee54270f2b]
    as 
     
     
@@ -28,12 +28,12 @@ where ship_method_id is null
   from (
     select  * from 
 
-    [dbt_test__audit.testview_585f8125b540e2e047790d71901d8ba3]
+    [dbt_test__audit.testview_0024b185266f28a7013651ee54270f2b]
   
   ) dbt_internal_test;
 
   USE [etl-server];
   EXEC('drop view 
 
-    [dbt_test__audit.testview_585f8125b540e2e047790d71901d8ba3]
+    [dbt_test__audit.testview_0024b185266f28a7013651ee54270f2b]
   ;')

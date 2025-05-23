@@ -6,7 +6,7 @@
   USE [etl-server];
   EXEC('create view 
 
-    [dbt_test__audit.testview_6c917fd46c48d57827c179b29160d499]
+    [dbt_test__audit.testview_c10921bdee49e9e2ccc7a91cc8af5170]
    as 
     
     
@@ -28,12 +28,12 @@ where id_metodo is null
   from (
     select  * from 
 
-    [dbt_test__audit.testview_6c917fd46c48d57827c179b29160d499]
+    [dbt_test__audit.testview_c10921bdee49e9e2ccc7a91cc8af5170]
   
   ) dbt_internal_test;
 
   USE [etl-server];
   EXEC('drop view 
 
-    [dbt_test__audit.testview_6c917fd46c48d57827c179b29160d499]
+    [dbt_test__audit.testview_c10921bdee49e9e2ccc7a91cc8af5170]
   ;')

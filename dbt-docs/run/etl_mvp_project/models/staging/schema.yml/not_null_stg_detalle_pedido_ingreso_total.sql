@@ -6,7 +6,7 @@
   USE [etl-server];
   EXEC('create view 
 
-    [dbt_test__audit.testview_d903e2305a8a994e51c181526e16d7f3]
+    [dbt_test__audit.testview_ca22c5d9921bac3399c555ce9de78c46]
    as 
     
     
@@ -28,12 +28,12 @@ where ingreso_total is null
   from (
     select  * from 
 
-    [dbt_test__audit.testview_d903e2305a8a994e51c181526e16d7f3]
+    [dbt_test__audit.testview_ca22c5d9921bac3399c555ce9de78c46]
   
   ) dbt_internal_test;
 
   USE [etl-server];
   EXEC('drop view 
 
-    [dbt_test__audit.testview_d903e2305a8a994e51c181526e16d7f3]
+    [dbt_test__audit.testview_ca22c5d9921bac3399c555ce9de78c46]
   ;')
